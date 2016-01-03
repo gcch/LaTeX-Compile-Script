@@ -1,4 +1,4 @@
-' Replace.vbs
+' replace.vbs
 ' Copyright (c) 2013-2015 tag
 
 Option Explicit
@@ -38,8 +38,8 @@ Set objFSO = Nothing
 Function ReplaceWithPatterns(objInput)
 	Dim strLine, strOutput, strReplacePattern
 	Dim strReplacePatternArray : strReplacePatternArray = Array( _
-		Array("、", "，"), _
-		Array("。", "．") _
+		Array("ﾂ、", "ﾂ，"), _
+		Array("ﾂ。", "ﾂ．") _
 	)
 	Do Until objInput.AtEndOfStream = True
 		strLine = objInput.ReadLine
