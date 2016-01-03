@@ -20,7 +20,7 @@ TeX ファイルを手軽にコンパイルするためのスクリプト群で�
 ## References
 
 * [IPAフォントのダウンロード](http://ipafont.ipa.go.jp/old/ipafont/download.html)
-* [OTC から OTF を抽出（自動化）｜マスクメロン](http://www.muskmelon.jp/?p=1204)
+* [OTC から OTF を抽出（自動化） | マスクメロン](http://www.muskmelon.jp/?p=1204)
 * [FontForge Open Source Font Editor](http://fontforge.github.io)
 * [TeX インストーラ 3](http://www.math.sci.hokudai.ac.jp/~abenori/soft/abtexinst.html)
 * [MacTeX - TeX Users Group](http://www.tug.org/mactex/)
@@ -31,4 +31,4 @@ This script is released under the MIT license. See the LICENSE file.
 
 
 ## Author
-* tag (Twitter: [@tag_ism](https://twitter.com/tag_ism "tag (@tag_ism) | Twitter") / Blog: http://karat5i.blogspot.jp/)
+* tag (Blog: [とりとめもないはなし。](http://karat5i.blogspot.jp/) | Twitter: [@tag_ism](https://twitter.com/tag_ism))
