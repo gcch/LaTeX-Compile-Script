@@ -1,0 +1,34 @@
+%
+% fontmap for dvipdfmx (IPA-Mincho + IPA-Gothic)
+%
+% TFM	CID Map	Font File
+
+% for pTeX
+rml	H	ipam.ttf
+rmlv	V	ipam.ttf
+gbm	H	ipag.ttf
+gbmv	V	ipag.ttf
+
+% UTF
+hmr	H	ipam.ttf
+hmrv	V	ipam.ttf
+hkb	H	ipag.ttf
+hkbv	V	ipag.ttf
+
+% Unicode
+unijmin-h	UniJIS-UTF16-H	ipam.ttf
+unijmin-v	UniJIS-UTF16-V	ipam.ttf
+unijgoth-h	UniJIS-UTF16-H	ipag.ttf
+unijgoth-v	UniJIS-UTF16-V	ipag.ttf
+
+% CID
+cidmin-h	Identity-H	ipam.ttf/AJ1
+cidmin-v	Identity-V	ipam.ttf/AJ1
+cidgoth-h	Identity-H	ipag.ttf/AJ1
+cidgoth-v	Identity-V	ipag.ttf/AJ1
+
+% 
+hminr-h	H	ipam.ttf
+hminr-v	V	ipam.ttf
+hgothr-h	H	ipag.ttf
+hgothr-v	V	ipag.ttf

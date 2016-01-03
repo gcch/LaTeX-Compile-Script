@@ -1,0 +1,56 @@
+%
+% fontmap for dvipdfmx (Hiragino Mincho Pro W3 + HIragino Sans W5)
+%
+% TFM	CID Map	Font File
+
+% for pTeX
+rml	H	HiraMinPro-W3.otf
+rmlv	V	HiraMinPro-W3.otf
+%gbm	H	HiraKakuPro-W3.otf
+%gbmv	V	HiraKakuPro-W3.otf
+gbm	H	HiraginoSans-W5.otf
+gbmv	V	HiraginoSans-W5.otf
+
+% UTF
+hmr	H	HiraMinPro-W3.otf
+hmrv	V	HiraMinPro-W3.otf
+%hkb	H	HiraKakuPro-W3.otf
+%hkbv	V	HiraKakuPro-W3.otf
+hkb	H	HiraginoSans-W5.otf
+hkbv	V	HiraginoSans-W5.otf
+
+% Unicode
+unijmin-h	UniJIS-UTF16-H	HiraMinPro-W3.otf
+unijmin-v	UniJIS-UTF16-V	HiraMinPro-W3.otf
+%unijgoth-h	UniJIS-UTF16-H	HiraKakuPro-W3.otf
+%unijgoth-v	UniJIS-UTF16-V	HiraKakuPro-W3.otf
+unijgoth-h	UniJIS-UTF16-H	HiraginoSans-W5.otf
+unijgoth-v	UniJIS-UTF16-V	HiraginoSans-W5.otf
+
+% CID
+cidmin-h	Identity-H	HiraMinPro-W3.otf/AJ1
+cidmin-v	Identity-V	HiraMinPro-W3.otf/AJ1
+%cidgoth-h	Identity-H	HiraKakuPro-W3.otf/AJ1
+%cidgoth-v	Identity-V	HiraKakuPro-W3.otf/AJ1
+cidgoth-h	Identity-H	HiraginoSans-W5.otf/AJ1
+cidgoth-v	Identity-V	HiraginoSans-W5.otf/AJ1
+
+% Hiragino Mincho - Bold
+hminb-h	H	HiraMinPro-W6.otf
+hminb-v	V	HiraMinPro-W6.otf
+
+% Hiragino Gothic - Regular
+hgothr-h	H	HiraKakuPro-W3.otf
+hgothr-v	V	HiraKakuPro-W3.otf
+
+% Hiragino Gothic - Bold
+hgothb-h	H	HiraKakuPro-W6.otf
+hgothb-v	V	HiraKakuPro-W6.otf
+
+% Hiragino Gothic - Extra Bold
+hgotheb-h	H	HiraginoSans-W8.otf
+hgotheb-v	V	HiraginoSans-W8.otf
+
+% Hiragino Maru Gothic - Regular
+hmgothr-h	H	HiraMaruPro-W4.otf
+hmgothr-v	V	HiraMaruPro-W4.otf

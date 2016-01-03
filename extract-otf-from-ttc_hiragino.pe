@@ -1,0 +1,89 @@
+#!/Applications/FontForge.app/Contents/Resources/opt/local/bin/fontforge
+
+# Hiragino TTC to OTF Extractor for FontForge on OS X El Capitan
+# [reference: http://www.muskmelon.jp/?p=1204]
+
+# Hiragino Mincho ProN W3
+HiraMinProN_W3 = "/System/Library/Fonts/ヒラギノ明朝 ProN W3.ttc"
+Open(HiraMinProN_W3 + "(ヒラギノ明朝 Pro W3)")
+Generate("HiraMinPro-W3.otf")
+Open(HiraMinProN_W3 + "(ヒラギノ明朝 ProN W3)")
+Generate("HiraMinProN-W3.otf")
+
+# Hiragino Mincho ProN W6
+HiraMinProN_W6 = "/System/Library/Fonts/ヒラギノ明朝 ProN W6.ttc"
+Open(HiraMinProN_W6 + "(ヒラギノ明朝 Pro W6)")
+Generate("HiraMinPro-W6.otf")
+Open(HiraMinProN_W6 + "(ヒラギノ明朝 ProN W6)")
+Generate("HiraMinProN-W6.otf")
+
+# Hiragino Kaku Gothic W3
+HiraKakuProN_W3 = "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"
+Open(HiraKakuProN_W3 + "(ヒラギノ角ゴ Pro W3)")
+Generate("HiraKakuPro-W3.otf")
+Open(HiraKakuProN_W3 + "(ヒラギノ角ゴ ProN W3)")
+Generate("HiraKakuProN-W3.otf")
+
+# Hiragino Kaku Gothic W6
+HiraKakuProN_W6 = "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
+Open(HiraKakuProN_W6 + "(ヒラギノ角ゴ Pro W6)")
+Generate("HiraKakuPro-W6.otf")
+Open(HiraKakuProN_W6 + "(ヒラギノ角ゴ ProN W6)")
+Generate("HiraKakuProN-W6.otf")
+
+# Hiragino Maru Gothic W4
+HiraMaruProN_W4 = "/Library/Fonts/ヒラギノ丸ゴ ProN W4.ttc"
+Open(HiraMaruProN_W4 + "(ヒラギノ丸ゴ Pro W4)")
+Generate("HiraMaruPro-W4.otf")
+Open(HiraMaruProN_W4 + "(ヒラギノ丸ゴ ProN W4)")
+Generate("HiraMaruProN-W4.otf")
+
+# Hiragino Sans W0
+HiraginoSans_W0 = "/System/Library/Fonts/ヒラギノ角ゴシック W0.ttc"
+Open(HiraginoSans_W0)
+Generate("HiraginoSans-W0.otf")
+
+# Hiragino Sans W1
+HiraginoSans_W1 = "/System/Library/Fonts/ヒラギノ角ゴシック W1.ttc"
+Open(HiraginoSans_W1)
+Generate("HiraginoSans-W1.otf")
+
+# Hiragino Sans W2
+HiraginoSans_W2 = "/System/Library/Fonts/ヒラギノ角ゴシック W2.ttc"
+Open(HiraginoSans_W2)
+Generate("HiraginoSans-W2.otf")
+
+# Hiragino Sans W3
+HiraginoSans_W3 = "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"
+Open(HiraginoSans_W3)
+Generate("HiraginoSans-W3.otf")
+
+# Hiragino Sans W4
+HiraginoSans_W4 = "/System/Library/Fonts/ヒラギノ角ゴシック W4.ttc"
+Open(HiraginoSans_W4)
+Generate("HiraginoSans-W4.otf")
+
+# Hiragino Sans W5
+HiraginoSans_W5 = "/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc"
+Open(HiraginoSans_W5)
+Generate("HiraginoSans-W5.otf")
+
+# Hiragino Sans W6
+HiraginoSans_W6 = "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
+Open(HiraginoSans_W6)
+Generate("HiraginoSans-W6.otf")
+
+# Hiragino Sans W7
+HiraginoSans_W7 = "/System/Library/Fonts/ヒラギノ角ゴシック W7.ttc"
+Open(HiraginoSans_W7)
+Generate("HiraginoSans-W7.otf")
+
+# Hiragino Sans W8
+HiraginoSans_W8 = "/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc"
+Open(HiraginoSans_W8)
+Generate("HiraginoSans-W8.otf")
+
+# Hiragino Sans W9
+HiraginoSans_W9 = "/System/Library/Fonts/ヒラギノ角ゴシック W9.ttc"
+Open(HiraginoSans_W9)
+Generate("HiraginoSans-W9.otf")

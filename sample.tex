@@ -1,0 +1,180 @@
+\documentclass[11pt, a4paper, twoside]{jsarticle}
+% 11pt:	フォントサイズ
+% a4paper: A4用紙サイズ
+% twoside: 奇数・偶数ページごとに異なったヘッダ・フッタを指定するために使用
+
+% page layout settings
+\setlength{\textwidth}{\fullwidth}	% 本文領域 幅
+\addtolength{\textheight}{\topskip}	% 本文領域 高 への \topskip の追加
+\setlength{\voffset}{-0.3in}	% ヘッダの開始地点
+\setlength{\headsep}{0.1in}	% ヘッダから文書開始までの高さ
+\setlength{\textheight}{39\baselineskip}	% 文章の高さ (フッタの開始地点)
+
+\renewcommand{\refname}{参考サイト}
+
+% import packages
+\usepackage[dvipdfmx]{graphicx}	% 画像周り
+\usepackage{amsmath, amssymb}	% 数式周り
+\usepackage{times}	% Times フォント
+
+% date (yyyy/mm/dd)
+\makeatletter
+\newcommand*{\yyyymmdd}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
+\makeatother
+
+% PDF ファイルのプロパティ，しおり，ref -> label / cite -> item のジャンプ
+\usepackage[	% (括弧内はデフォルト値)
+dvipdfm,
+draft=false,		% hyperref の機能の有効化 (false)
+bookmarks=true,		% しおり (true)
+bookmarksnumbered=true,	% しおりに節番号を振るか (false)
+bookmarksopen=false,	% しおりのツリーを開く (false)
+bookmarkstype=toc,	% しおりのタイプ
+colorlinks=false,	% リンクの色付け (false)
+anchorcolor=black,	% アンカーテキストの色指定 (black)
+citecolor=black,	% 参考文献リンクの色 (green)
+filecolor=black,	% ローカルファイルリンクの色 (magenta)
+urlcolor=black,		% URL の色 (magenta)
+pdfauthor={Copyright (c) 2015 tag},	% 著者
+pdfborder={0 0 0},	% 枠 (0 0 1)
+pdftitle={},	% タイトル
+pdfsubject={},	% サブタイトル
+pdfkeywords={}	% キーワード
+]{hyperref}
+\usepackage{pxjahyper}% しおりの文字化け対策
+%\usepackage{atbegshi}% pxjahyper が使えない場合 (下記のいずれかもセットで)
+%\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}% for Shift-JIS, UTF-8
+%\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}% for EUC
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\LaTeX コンパイルスクリプト}
+\author{tag \\[-2pt]
+{\small Blog: \url{http://karat5i.blogspot.jp}} \\[-6pt]
+{\small GitHub: \url{https://github.com/gcch}} \\[-6pt]
+{\small Twitter: @tag\_ism} \\
+}
+\date{\yyyymmdd}
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{概要} \label{sec:Overview}
+
+本稿は「\LaTeX コンパイルスクリプト」の簡単な説明書である．
+「\LaTeX コンパイルスクリプト」は次のようなユーザを想定している．
+\begin{itemize}
+\item Windows ユーザである
+\item 作成した \TeX ファイルをクラウドストレージなどに保存し，Mac OS X や Linux でも編集する可能性がある
+\item \TeX 統合環境ではなく，好きなテキストエディタを使いたい
+\item 句読点を「，」「．」で書く必要がある (無効化可能．「\TeX コンパイルスクリプト」の replace 部分をコメントアウトすればよい．)
+\end{itemize}
+本スクリプトでは Windows 環境をメイン環境として想定しているため，文字コードは Shift-JIS，改行文字には CR/LF (Carriage Return + Line Feed) を使うこと想定した設計となっている．もちろん，スクリプトをカスタマイズすれば UTF-8 + LF への対応も可能なはずである．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{構成ファイル} \label{sec:Components}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{\TeX コンパイルスクリプト} \label{sec:TeX-Compile-Script}
+
+\TeX ファイルをコンパイルする際に必要になる．
+「\LaTeX コンパイルスクリプト」のメイン部分である．
+\begin{description}
+\item[sample.cmd] \mbox{} \\\hskip0.961em
+\TeX コンパイルスクリプト for Windows
+\item[sample.command] \mbox{} \\\hskip0.961em
+\TeX コンパイルスクリプト for Mac OS X (chmod +x で実行権限を付加する必要あり．)
+\item[sample.sh] \mbox{} \\\hskip0.961em
+\TeX コンパイルスクリプト for Linux (未検証．chmod +x で実行権限を付加する必要あり．)
+\end{description}
+
+また，Windows のコマンドプロンプトでは文字列置換が行えないため，VBScript による文字列置換スクリプトが必要になる．
+\begin{description}
+\item[replace.vbs] \mbox{} \\\hskip0.961em
+文字列置換スクリプト for Windows (\TeX コンパイルスクリプト for Windows から呼び出される．)
+\end{description}
+Mac OS X / Linux 用のスクリプトでは，それぞれのスクリプト内で sed (Stream Editor) コマンドを用いて同機能を実装してある．(因みに，Mac OS X のは BSD 版，Linux のは GNU 版を想定している．)
+デフォルトの文字列置換パターンとして設定してあるのは句読点の置換のみである．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{フォントマップファイル} 
+
+PDF ファイル作成時にフォントを埋め込むために必要になる．
+dvipdfmx の -f オプションで指定し，使用する．
+\begin{description}
+\item[font\_ms.map] \mbox{} \\\hskip0.961em
+フォントマップファイル (MS明朝 + MSゴシック)
+\item[font\_hiragino.map] \mbox{} \\\hskip0.961em
+フォントマップファイル (ヒラギノ明朝 + ヒラギノ角ゴ)
+\item[font\_ipa.map] \mbox{} \\\hskip0.961em
+フォントマップファイル (IPA明朝 + IPAゴシック \cite{ipafont})
+\end{description}
+それぞれ，Windows，Mac OS X，Linux の dvipdfmx の -f オプションのデフォルト値として設定してある．
+フォントはシステムのフォントフォルダまたはフォントマップファイルと同じフォルダに配置すればよい．
+また，スクリプトを書き換えることでフォントマップファイルを読み込まない仕様にも変更可能である．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{OTF 版ヒラギノ生成スクリプト (OS X El Capitan ユーザ向け) \cite{muskmelon}} 
+
+OS X El Capitan から付属しているヒラギノが OTF (OpenType Font) から TTC (TrueType Collection) に変更されたため，\TeX での埋め込みができなくなっている．そこで，TTC から OTF に変換するために FontForge \cite{fontforge} を使用するためのスクリプトを用意してある．公式ページのガイドに従って FontForge をインストールした後，実行スクリプトを実行すること．
+\begin{description}
+\item[extract-otf-from-ttc\_hiragino.pe] \mbox{} \\\hskip0.961em
+OS X El Capitan 付属の TTC 版ヒラギノからOTF 版ヒラギノを生成するため FontForge スクリプト
+\item[extract-otf-from-ttc\_hiragino.command] \mbox{} \\\hskip0.961em
+extract-otf-from-ttc\_hiragino.pe 実行スクリプト (chmod +x で実行権限を付加する必要あり．)
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{準備と使用方法}
+
+\begin{itemize}
+\item \textbf{\LaTeX 環境の構築} \mbox{} \\\hskip0.961em
+Windows 環境であれば「TeX インストーラ 3 \cite{texinstaller3}」，OS X 環境であれば「MacTeX \cite{mactex}」などを用いて \LaTeX 環境構築を行う．``platex'' および ``dvipdfmx'' が実行可能となれば問題ない．
+\item \textbf{「\LaTeX コンパイルスクリプト」の準備} \mbox{} \\\hskip0.961em
+困ったらすべてのファイルをそのまま任意の作業フォルダにコピーする．
+\item \textbf{\TeX ソースファイルの作成} \mbox{} \\\hskip0.961em
+\TeX ファイル\footnote{付属の sample.tex に相当}を作成する．ファイル名は「ファイルコンパイル用バッチファイル」と同じ名前にする．もちろん「ファイルコンパイル用バッチファイル」を作成した \TeX ファイルと同じ名前にしてもよい．
+\item \textbf{コンパイル} \mbox{} \\\hskip0.961em
+「\TeX コンパイルスクリプト (\ref{sec:TeX-Compile-Script}\,節)」 を実行すると，\TeX ファイルのコンパイルが始まる．時間が経てば PDF ファイルが出力されるはずである．再度 PDF ファイルを作成する場合には再度操作を行えばよい．
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{トラブルシューティング}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Windows が邪魔をしてくる}
+
+Windows 8.x の環境によっては，バッチファイル，VBScript をセキュリティ的な問題から止めにかかってくるので，適当に許可してあげて欲しい．Modern UI スタイルでなんか出たりするので，ゴニョゴニョやれば OK である．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{文字列置換が上手く動作しない / \TeX ファイルの内容が文字化けする}
+
+ほぼ間違いなく，文字コードの問題である．
+対象の \TeX ファイルの文字コードが Shift-JIS であるか確認してほしい．
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{ipafont} IPA 独立行政法人情報処理推進機構, ``IPAフォントのダウンロード,'' \url{http://ipafont.ipa.go.jp/old/ipafont/download.html}.
+\bibitem{muskmelon} muskmelon, ``OTC から OTF を抽出（自動化）｜マスクメロン,'' \url{http://www.muskmelon.jp/?p=1204}.
+\bibitem{fontforge} George Williams and the FontForge Project contributors, ``FontForge Open Source Font Editor,'' \url{http://fontforge.github.io}.
+\bibitem{texinstaller3} 阿部 紀行, ``TeX インストーラ 3,'' \url{http://www.math.sci.hokudai.ac.jp/~abenori/soft/abtexinst.html}.
+\bibitem{mactex} MacTeX TeXnical working group, ``MacTeX - TeX Users Group,'' \url{http://www.tug.org/mactex/}.
+
+\end{thebibliography}
+
+\end{document}
