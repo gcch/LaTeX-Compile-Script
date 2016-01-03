@@ -39,7 +39,7 @@ TASKKILL /IM Acrobat.exe /F /T
 %DVI2PDF% -f "%FMAP%" "%FNAME%.dvi"
 
 :: pause if error occured
-IF NOT "%ERRORLEVEL%"  == "0" (
+IF NOT "%ERRORLEVEL%" == "0" (
 	PAUSE > NUL
 	EXIT /B
 )
