@@ -1,56 +1,93 @@
 %
-% fontmap for dvipdfmx (Hiragino Mincho Pro W3 + HIragino Sans W5)
+% fontmap for dvipdfmx (Hiragino Mincho Pro W3 + HIragino Kaku Gothic W4)
 %
+
 % TFM	CID Map	Font File
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % for pTeX
-rml	H	HiraMinPro-W3.otf
-rmlv	V	HiraMinPro-W3.otf
-%gbm	H	HiraKakuPro-W3.otf
-%gbmv	V	HiraKakuPro-W3.otf
-gbm	H	HiraginoSans-W5.otf
-gbmv	V	HiraginoSans-W5.otf
+rml	H	HiraMinPro-W3
+rmlv	V	HiraMinPro-W3
+gbm	H	HiraginoSans-W4
+gbmv	V	HiraginoSans-W4
 
-% UTF
-hmr	H	HiraMinPro-W3.otf
-hmrv	V	HiraMinPro-W3.otf
-%hkb	H	HiraKakuPro-W3.otf
-%hkbv	V	HiraKakuPro-W3.otf
-hkb	H	HiraginoSans-W5.otf
-hkbv	V	HiraginoSans-W5.otf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Unicode
-unijmin-h	UniJIS-UTF16-H	HiraMinPro-W3.otf
-unijmin-v	UniJIS-UTF16-V	HiraMinPro-W3.otf
-%unijgoth-h	UniJIS-UTF16-H	HiraKakuPro-W3.otf
-%unijgoth-v	UniJIS-UTF16-V	HiraKakuPro-W3.otf
-unijgoth-h	UniJIS-UTF16-H	HiraginoSans-W5.otf
-unijgoth-v	UniJIS-UTF16-V	HiraginoSans-W5.otf
+% Mincho
+hmr		H		HiraMinPro-W3
+hmrv		V		HiraMinPro-W3
+unijmin-h	UniJIS-UTF16-H	HiraMinPro-W3
+unijmin-v	UniJIS-UTF16-V	HiraMinPro-W3
+cidmin-h	Identity-H	HiraMinPro-W3
+cidmin-v	Identity-V	HiraMinPro-W3
 
-% CID
-cidmin-h	Identity-H	HiraMinPro-W3.otf/AJ1
-cidmin-v	Identity-V	HiraMinPro-W3.otf/AJ1
-%cidgoth-h	Identity-H	HiraKakuPro-W3.otf/AJ1
-%cidgoth-v	Identity-V	HiraKakuPro-W3.otf/AJ1
-cidgoth-h	Identity-H	HiraginoSans-W5.otf/AJ1
-cidgoth-v	Identity-V	HiraginoSans-W5.otf/AJ1
+% Gothic
+hkb		H		HiraginoSans-W4
+hkbv		V		HiraginoSans-W4
+unijgoth-h	UniJIS-UTF16-H	HiraginoSans-W4
+unijgoth-v	UniJIS-UTF16-V	HiraginoSans-W4
+cidgoth-h	Identity-H	HiraginoSans-W4
+cidgoth-v	Identity-V	HiraginoSans-W4
 
-% Hiragino Mincho - Bold
-hminb-h	H	HiraMinPro-W6.otf
-hminb-v	V	HiraMinPro-W6.otf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Hiragino Gothic - Regular
-hgothr-h	H	HiraKakuPro-W3.otf
-hgothr-v	V	HiraKakuPro-W3.otf
+%
+% for OTF Package
+%
 
-% Hiragino Gothic - Bold
-hgothb-h	H	HiraKakuPro-W6.otf
-hgothb-v	V	HiraKakuPro-W6.otf
+% Mincho
+hminr-h		H		HiraMinPro-W3
+hminr-v		V		HiraMinPro-W3
+otf-ujmr-h	UniJIS-UTF16-H	HiraMinPro-W3
+otf-ujmr-v	UniJIS-UTF16-V	HiraMinPro-W3
+otf-cjmr-h	Identity-H	HiraMinPro-W3
+otf-cjmr-v	Identity-V	HiraMinPro-W3
 
-% Hiragino Gothic - Extra Bold
-hgotheb-h	H	HiraginoSans-W8.otf
-hgotheb-v	V	HiraginoSans-W8.otf
+% Gothic
+hgothr-h	H		HiraginoSans-W4
+hgothr-v	V		HiraginoSans-W4
+otf-ujgr-h	UniJIS-UTF16-H	HiraginoSans-W4
+otf-ujgr-v	UniJIS-UTF16-V	HiraginoSans-W4
+otf-cjgr-h	Identity-H	HiraginoSans-W4
+otf-cjgr-v	Identity-V	HiraginoSans-W4
 
-% Hiragino Maru Gothic - Regular
-hmgothr-h	H	HiraMaruPro-W4.otf
-hmgothr-v	V	HiraMaruPro-W4.otf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% for OTF Package with Deluxe option
+%
+
+% Mincho Bold
+hminb-h		H		HiraMinPro-W6
+hminb-v		V		HiraMinPro-W6
+otf-ujmb-h	UniJIS-UTF16-H	HiraMinPro-W6
+otf-ujmb-v	UniJIS-UTF16-V	HiraMinPro-W6
+otf-cjmb-h	Identity-H	HiraMinPro-W6
+otf-cjmb-v	Identity-V	HiraMinPro-W6
+
+% Gothic Bold
+hgothb-h	H		HiraKakuPro-W6
+hgothb-v	V		HiraKakuPro-W6
+otf-ujgb-h	UniJIS-UTF16-H	HiraKakuPro-W6
+otf-ujgb-v	UniJIS-UTF16-V	HiraKakuPro-W6
+otf-cjgb-h	Identity-H	HiraKakuPro-W6
+otf-cjgb-v	Identity-V	HiraKakuPro-W6
+
+% Gothic Extra Bold
+hgotheb-h	H		HiraginoSans-W8
+hgotheb-v	V		HiraginoSans-W8
+otf-ujgeb-h	UniJIS-UTF16-H	HiraginoSans-W8
+otf-ujgeb-v	UniJIS-UTF16-V	HiraginoSans-W8
+otf-cjgeb-h	Identity-H	HiraginoSans-W8
+otf-cjgeb-v	Identity-V	HiraginoSans-W8
+
+% Maru Gothic
+hmgothr-h	H		HiraMaruPro-W4
+hmgothr-v	V		HiraMaruPro-W4
+otf-ujmgr-h	UniJIS-UTF16-H	HiraMaruPro-W4
+otf-ujmgr-v	UniJIS-UTF16-V	HiraMaruPro-W4
+otf-cjmgr-h	Identity-H	HiraMaruPro-W4
+otf-cjmgr-v	Identity-V	HiraMaruPro-W4
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
