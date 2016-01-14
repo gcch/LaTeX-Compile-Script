@@ -8,7 +8,7 @@ cd "${0%/*}"
 
 # replace (GNU sed)
 LANG=ja_JP.SJIS
-find . -name '*.tex' -exec sed -i -e 's/、/，/g' -e 's/。/．/g' {} +
+find . -name '*.tex' -exec sed -i -e 's/ﾂ、/ﾂ，/g' -e 's/ﾂ。/ﾂ．/g' {} +
 LANG=ja_JP.UTF-8
 
 # get filename with extension of this script
@@ -22,8 +22,8 @@ DVI2PDF=dvipdfmx
 CCODE=sjis
 FMAP=font_ipa.map
 
-# delete AUX file
-rm "${FNAME}.aux"
+# delete temp files
+#rm "${FNAME}.aux" "${FNAME}.dvi" "${FNAME}.out" "${FNAME}.log" "${FNAME}.toc" "${FNAME}.lof" "${FNAME}.lot"
 
 # TeX -> DVI
 ${TEX2DVI} -kanji=${CCODE} "${FNAME}.tex"
@@ -35,6 +35,12 @@ ${TEX2DVI} -kanji=${CCODE} "${FNAME}.tex"
 ${DVI2PDF} -f "${FMAP}" "${FNAME}.dvi"
 
 # pause if error occured
-if [ $? == 0 ]; then
-	exit 0
+RET=$?
+if [ ${RET} -ne 0 ]; then
+	read
 fi
+
+# delete temp files
+rm "${FNAME}.aux" "${FNAME}.dvi" "${FNAME}.out" "${FNAME}.log" "${FNAME}.toc" "${FNAME}.lof" "${FNAME}.lot"
+
+exit 0
