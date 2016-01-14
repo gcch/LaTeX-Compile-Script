@@ -20,6 +20,8 @@ TeX ファイルを手軽にコンパイルするためのスクリプト群で�
 
 Shift-JIS 以外の TeX ソースをコンパイルする場合には、文字列置換処理部分をコメントアウトするか、好みの文字コード向けの設定 (スクリプトの中身の Shift-JIS 関連の部分の変更とスクリプトの文字コードの変更) に変更する必要があります。
 
+※ Unicode (UTF-8) 版: https://github.com/gcch/LaTeX-Compile-Script-for-Unicode
+
 
 ## Usage
 
