@@ -22,7 +22,7 @@ SET CCODE=sjis
 SET FMAP=font_ms.map
 
 :: delete AUX file
-RM "%FNAME%.aux"
+::RM "%FNAME%.aux" "%FNAME%.dvi" "%FNAME%.out" "%FNAME%.log" "%FNAME%.toc" "%FNAME%.lof" "%FNAME%.lot"
 
 :: TeX -> DVI
 %TEX2DVI% -kanji=%CCODE% "%FNAME%.tex"
@@ -41,8 +41,9 @@ TASKKILL /IM Acrobat.exe /F /T
 :: pause if error occured
 IF NOT "%ERRORLEVEL%" == "0" (
 	PAUSE > NUL
-	EXIT /B
 )
 
-:: open PDF file
-::"%FNAME%.pdf"
+:: delete temp files
+RM "%FNAME%.aux" "%FNAME%.dvi" "%FNAME%.out" "%FNAME%.log" "%FNAME%.toc" "%FNAME%.lof" "%FNAME%.lot"
+
+EXIT /B
