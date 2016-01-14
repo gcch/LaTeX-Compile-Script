@@ -3,7 +3,7 @@
 # TeX Compile Script for Linux
 # Copyright (c) 2015 tag.
 
-# get script directory path and move there
+# move to the directory including this script
 cd "${0%/*}"
 
 # replace (GNU sed)
@@ -36,7 +36,7 @@ ${DVI2PDF} -f "${FMAP}" "${FNAME}.dvi"
 
 # pause if error occured
 RET=$?
-if [ ${RET} -ne 0 ]; then
+if [ ! ${RET} -eq 0 ]; then
 	read
 fi
 
