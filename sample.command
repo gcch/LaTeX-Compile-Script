@@ -35,9 +35,8 @@ ${TEX2DVI} -kanji=${CCODE} "${FNAME}.tex"
 ${DVI2PDF} -f "${FMAP}" "${FNAME}.dvi"
 
 # pause if error occured
-# pause if error occured
 RET=$?
-if [ ${RET} -ne 0 ]; then
+if [ ! ${RET} -eq 0 ]; then
 	read
 fi
 
