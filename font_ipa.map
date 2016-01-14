@@ -1,34 +1,55 @@
 %
 % fontmap for dvipdfmx (IPA-Mincho + IPA-Gothic)
 %
+
 % TFM	CID Map	Font File
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % for pTeX
-rml	H	ipam.ttf
-rmlv	V	ipam.ttf
-gbm	H	ipag.ttf
-gbmv	V	ipag.ttf
+rml	H	ipam
+rmlv	V	ipam
+gbm	H	ipag
+gbmv	V	ipag
 
-% UTF
-hmr	H	ipam.ttf
-hmrv	V	ipam.ttf
-hkb	H	ipag.ttf
-hkbv	V	ipag.ttf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Unicode
-unijmin-h	UniJIS-UTF16-H	ipam.ttf
-unijmin-v	UniJIS-UTF16-V	ipam.ttf
-unijgoth-h	UniJIS-UTF16-H	ipag.ttf
-unijgoth-v	UniJIS-UTF16-V	ipag.ttf
+% Mincho
+hmr		H		ipam
+hmrv		V		ipam
+unijmin-h	UniJIS-UTF16-H	ipam
+unijmin-v	UniJIS-UTF16-V	ipam
+cidmin-h	Identity-H	ipam
+cidmin-v	Identity-V	ipam
 
-% CID
-cidmin-h	Identity-H	ipam.ttf/AJ1
-cidmin-v	Identity-V	ipam.ttf/AJ1
-cidgoth-h	Identity-H	ipag.ttf/AJ1
-cidgoth-v	Identity-V	ipag.ttf/AJ1
+% Gothic
+hkb		H		ipag
+hkbv		V		ipag
+unijgoth-h	UniJIS-UTF16-H	ipag
+unijgoth-v	UniJIS-UTF16-V	ipag
+cidgoth-h	Identity-H	ipag
+cidgoth-v	Identity-V	ipag
 
-% 
-hminr-h	H	ipam.ttf
-hminr-v	V	ipam.ttf
-hgothr-h	H	ipag.ttf
-hgothr-v	V	ipag.ttf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% for OTF Package
+%
+
+% Mincho
+hminr-h		H		ipam
+hminr-v		V		ipam
+otf-ujmr-h	UniJIS-UTF16-H	ipam
+otf-ujmr-v	UniJIS-UTF16-V	ipam
+otf-cjmr-h	Identity-H	ipam
+otf-cjmr-v	Identity-V	ipam
+
+% Gothic
+hgothr-h	H		ipag
+hgothr-v	V		ipag
+otf-ujgr-h	UniJIS-UTF16-H	ipag
+otf-ujgr-v	UniJIS-UTF16-V	ipag
+otf-cjgr-h	Identity-H	ipag
+otf-cjgr-v	Identity-V	ipag
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
