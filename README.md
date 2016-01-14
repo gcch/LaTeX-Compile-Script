@@ -9,6 +9,8 @@ TeX ファイルを手軽にコンパイルするためのスクリプト群で�
 スクリプトを実行した際に TeX ファイルの文字置換 (デフォルトでは句読点を「、。」から「，．」に置換)、フォントの埋め込み (デフォルトでは Windows 用スクリプトでは「MS明朝」＆「MSゴシック」、Mac OS X 用スクリプトでは「ヒラギノ明朝」＆「ヒラギノ角ゴ」、Linux 用スクリプトでは「IPA明朝」＆「IPAゴシック」) を行う処理を組み込んである。
 メインは Windows ユーザ向け、Mac OS X や Linux 用のスクリプトも一応用意してある。
 
+デフォルトは理工系学生向け仕様になっているので、利用用途に合わせてカスタマイズしてください。
+
 また、おまけ (？) として OS X El Capitan ユーザ向けにヒラギノフォントを TTC から OTF に変換するためのスクリプトも含まれている。 ([この記事](http://www.muskmelon.jp/?p=1204)を参考に作成。muskmelon さんに感謝。)
 
 
@@ -34,8 +36,10 @@ Shift-JIS 以外の TeX ソースをコンパイルする場合には、文字�
 
 
 ## License
-This script is released under the MIT license. See the LICENSE file.
+
+This script is released under the MIT license. See the [LICENSE](LICENSE) file.
 
 
 ## Author
+
 * tag (Blog: [とりとめもないはなし。](http://karat5i.blogspot.jp/) | Twitter: [@tag_ism](https://twitter.com/tag_ism))
